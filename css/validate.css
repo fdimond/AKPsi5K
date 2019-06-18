@@ -1,0 +1,8 @@
+.alert {
+  display: none;
+}
+
+.validation-error {
+  color: #f00;
+  font-size: 90%;
+}

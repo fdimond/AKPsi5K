@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKPsi Spring Forward 5k</title>
+  <link rel="icon" href="img/logo-square.png">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Google Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-72787473-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- hamburger icon -->
+        <!-- logo !! find font-->
+        <a href="index.html" class="navbar-brand" style="color: #00007F">
+          <p><img src="img/logo-square.png" alt="Alpha Kappa Psi logo" style="max-height:25px; margin-right:0.2em;"><strong>Alpha Kappa Psi</strong></p>
+        </a>
+      </div>
+      <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="results.html">Race Results</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Make-shift header specifically for Spring Forward Banner-->
+
+  <img src="img/spring-forward-logo.png" alt="" style="width: 100%">
+  <div style="width: 100%;">
+    <button style="width: 50%; text-align: center; font-size: 4.5em; color: white; background-color: #337AB7" onclick="location.href='register.html'"><b>Register</b></button><button style="width: 50%; text-align: center; font-size: 4.5em; background-color: #96BF84" onclick="location.href='https://venmo.com/rho-philanthropy'"><b>Donate</b></button>
+  </div>
+  <main style="text-align: center">
+    <h2>Explore the UW Campus</h2>
+    <div class="container" style="text-align: center; padding-top:10px">
+      <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/Sky_PI8NCcE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen id="video"></iframe>
+    </div>
+      <hr>
+
+    <div class="container" id="prizes">
+      <h2>Prizes!!</h2>
+      <h4 style="text-align: left">
+      <table class="table table-bordered">
+        <tr><td>TBA</td></tr>
+        <tr><td>TBA</td></tr>
+        <tr><td>TBA</td></tr>
+      </table>
+    </h4>
+
+    </div>
+    <div class="container" id="route">
+      <h2>Race Route</h2>
+      <div class="alert-warning alert">
+        <strong>Note: </strong> While you can pinch and zoom on mobile devices, the map is more easily viewed on desktop computers.
+      </div>
+      <iframe id="map" src="https://www.plotaroute.com/embedmap/163014" frameborder="0" scrolling="no" width="728" height="500" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+      <p style="margin-top:8px;"><a href="https://www.plotaroute.com/route/163014" target="_blank" title="View this route map on plotaroute.com" style="font-family:Helvetica Neue,Helvetica,arial;font-size:11px;">View route map for 2017 AKPsi Spring Forward 5k - Updated  on plotaroute.com</a></p>
+    </div>
+    <hr>
+
+    <div class="container" id="registrationtimeline">
+      <h2>Registration Timeline</h2>
+      <h4>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>February 28, 2017</td>
+          <td>Registration Opens</td>
+        </tr>
+        <tr>
+          <td>March 14, 2017</td>
+          <td>Last day to register for a Tshirt</td>
+        </tr>
+        <tr>
+          <td>March 28, 2017 at noon</td>
+          <td>Last day to register</td>
+        </tr>
+        <tr>
+          <td>April 1, 2017</td>
+          <td>Race day!</td>
+        </tr>
+      </tbody>
+      </table>
+      </h4>
+    </div>
+
+    <div class="container" id="racetimeline">
+      <h2>Race Timeline</h2>
+      <h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8:30AM</td>
+            <td>Registration and T-Shirt Pick-up begins</dh>
+          </tr>
+          <tr>
+            <td>9:30AM</td>
+            <td>Experienced runners start</td>
+          </tr>
+          <tr>
+            <td>9:35AM</td>
+            <td>Beginner runners and walkers start</td>
+          </tr>
+          <tr>
+            <td>11:00AM</td>
+            <td>Awards Ceremony</td>
+          </tr>
+        </tbody>
+      </table>
+      </h4>
+    </div>
+
+
+
+    <hr>
+
+    <div class="container" id="fundraising">
+      <h2>Fundraising</h2>
+      <img src="img/acs.png" alt="" style="max-height: 100px">
+      <h4 style="line-height: 200%">The American Cancer Society puts these donations to work, investing in groundbreaking research in every type of cancer and providing free information and services to cancer patients and their caregivers. Join us to fight for every birthday threatened by cancer, in your community and everyone else's.</h4>
+    </div>
+
+    <hr>
+    <div class="container" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do I register for the AKPsi Spring Forward 5k?</h3>
+      <h4 style="line-height: 200%">To register online, click <a href="register.html">here</a>. You will have the option of signing up as an individual, forming a team or joining a team. You will be guided through the registration process. Once you have registered, you will receive a confirmation e-mail with your receipt. If you do not receive an e-mail confirmation, please contact <a href="mailto:rhochapterphilanthropy@outlook.com">us</a> to confirm that your registration is complete.</h4>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fluid">
+      <ul>
+        <li><a href="mailto:rhochapterphilanthropy@outlook.com">Contact Us</a></li>
+        <li><a href="">Privacy Statement</a></li>
+        <li><a href="">Terms & Conditions</a></li>
+        <li>&copy; 2017</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>

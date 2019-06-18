@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKPsi Spring Forward 5k</title>
+  <link rel="icon" href="img/logo-square.png">
+
+  <!-- angular script file -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/validate.css">
+  <script src="js/validate.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72787473-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body ng-app="SignupApp" ng-controller="SignupController">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collpase-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> <!-- hamburger icon -->
+        <!-- logo !! find font-->
+        <a href="index.html" class="navbar-brand" style="color: #00007F"><p><img src="img/logo-square.png" alt="Alpha Kappa Psi logo" style="max-height:25px; margin-right:0.2em;"><strong>Alpha Kappa Psi</strong></p></a>
+      </div> <!-- navbar-header -->
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collpase-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="results.html">Race Results</a></li>
+        </ul>
+      </div>
+    </div> <!-- container-fluid -->
+  </nav>
+  <img src="img/spring-forward-logo.png" alt="" style="width: 100%">
+
+  <main>
+  <div class="container">
+
+    <h1>Registration</h1>
+    <div class="container">
+      <table class="table">
+        <thead>
+        <tr class="row-1" id="row-1">
+            <th class="column-1">Registration Option</th>
+            <th class="column-2">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-2">
+            <td class="column-1" align="center">UW Student Registration</td>
+            <td class="column-2" align="center"><b>$15</b></td>
+        </tr>
+        <tr class="row-3">
+            <td class="column-1" align="center">Regular Registration</td>
+            <td class="column-2" align="center"><b>$25</b></td>
+        </tr>
+        </tbody>
+      </table>
+  </div>
+    <h3>Contact Information</h3>
+    <!-- Form -->
+    <form name="signup" id="signup" method="POST" action="registration.php">
+      <!-- fname -->
+      <div class="form-group row">
+        <label for="fname" class="col-sm-2 form-control-label">First Name: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="fname" id="fname" ng-model="app.fname" placeholder="First Name" required autofocus autocomplete>
+          <p class="validation-error" ng-if="signup.fname.$dirty && signup.fname.$error.required">First name required</p>
+        </div>
+      </div>
+      <!-- lname -->
+      <div class="form-group row">
+        <label for="lname" class="col-sm-2 form-control-label">Last Name: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="lname" placeholder="Last Name" id="lname" ng-model="app.lname" required autocomplete>
+          <p class="validation-error" ng-if="signup.lname.$dirty && signup.lname.$error.required">Last name required</p>
+        </div>
+      </div>
+      <!-- gender -->
+      <div class="form-group row">
+        <label for="gender" class="col-sm-2">Gender: </label>
+        <div class="col-sm-10">
+          <div class="radio">
+            <label>
+              <input type="radio" name="gender" id="gender" value="male" required>Male
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="gender" value="female">Female
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- date of birth -->
+      <div class="form-group row">
+        <label for="dob" class="col-sm-2 form-control-label">Date of Birth: </label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" name="dob" placeholder="mm/dd/yyyy" ng-model="app.dob" id="dob"required autocomplete older-than18>
+
+          <p class="validation-error" ng-if="signup.dob.$dirty && signup.dob.$error.required">Date of birth required</p>
+          <p class="validation-error" ng-if="signup.dob.$dirty &&signup.dob.$error.olderThan18">You must be 18 years old to register!</p>
+       </div>
+      </div>
+      <!-- email address -->
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 form-control-label">Email: </label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" name="email" placeholder="abc@xyz.com" id="email" ng-model="app.email" required autocomplete>
+          <p class="validation-error" ng-if="signup.email.$dirty && signup.email.$error.required">Email required</p>
+        </div>
+      </div>
+      <!-- Confirm email address -->
+      <div class="form-group row">
+        <label for="confirm" class="col-sm-2 form-control-label">Confirm Email: </label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" name="confirm" placeholder="abc@xyz.com" ng-model="app.confirm" id="confirm" required compare-to="app.email" autocomplete>
+
+        </div>
+        <p class="validation-error" ng-if="signup.confirm.$error.compareTo">Emails must match.</p>
+        <p class="validation-error" ng-if="signup.confirm.$dirty && signup.confirm.$error.required">Email required</p>
+      </div>
+
+
+      <!-- primary phone -->
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 form-control-label">Phone: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="phone" placeholder="xxx-xxx-xxxx" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" ng-model="app.phone" id="phone" required autocomplete>
+          <p class="validation-error" ng-if="signup.phone.$dirty && signup.phone.$error.required">Phone required</p>
+
+        </div>
+      </div>
+      <h3>Address</h3>
+      <!-- address -->
+      <div class="form-group row">
+        <label for="street" class="col-sm-2 form-control-label">Street: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="street" placeholder="Street" ng-model="app.street" id="street" required autocomplete>
+          <p class="validation-error" ng-if="signup.street.$dirty && signup.street.$error.required">Street required</p>
+        </div>
+      </div>
+      <!-- city -->
+      <div class="form-group row">
+        <label for="city" class="col-sm-2 form-control-label">City: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="city" placeholder="City" ng-model="app.city" id="city" required autocomplete>
+          <p class="validation-error" ng-if="signup.city.$dirty && signup.city.$error.required">City required</p>
+        </div>
+      </div>
+      <!-- state/province -->
+      <div class="form-group row">
+        <label for="state" class="col-sm-2 form-control-label">State: </label>
+        <div class="col-sm-10">
+          <select class="form-control" name="state" id="state" required>
+            <option value="">Select a State</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+      <!-- postal code -->
+      <div class="form-group row">
+        <label for="postal" class="col-sm-2 form-control-label">Postal Code: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="postal" placeholder="xxxxx" ng-model="app.postal" pattern='\d{5}-?(\d{4})?' id="postal" required autocomplete>
+          <p class="validation-error" ng-if="signup.postal.$dirty && signup.postal.$error.required">Postal code required</p>
+        </div>
+      </div>
+      <!-- country -->
+      <div class="form-group row">
+        <label for="country" class="col-sm-2 form-control-label">Country: </label>
+        <div class="col-sm-10">
+          <select class="form-control" name="country" id="country" required>
+            <option value="">Select a Country</option>
+            <option value="AF">Afghanistan</option>
+            <option value="AX">Åland Islands</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+            <option value="AS">American Samoa</option>
+            <option value="AD">Andorra</option>
+            <option value="AO">Angola</option>
+            <option value="AI">Anguilla</option>
+            <option value="AQ">Antarctica</option>
+            <option value="AG">Antigua and Barbuda</option>
+            <option value="AR">Argentina</option>
+            <option value="AM">Armenia</option>
+            <option value="AW">Aruba</option>
+            <option value="AU">Australia</option>
+            <option value="AT">Austria</option>
+            <option value="AZ">Azerbaijan</option>
+            <option value="BS">Bahamas</option>
+            <option value="BH">Bahrain</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BB">Barbados</option>
+            <option value="BY">Belarus</option>
+            <option value="BE">Belgium</option>
+            <option value="BZ">Belize</option>
+            <option value="BJ">Benin</option>
+            <option value="BM">Bermuda</option>
+            <option value="BT">Bhutan</option>
+            <option value="BO">Bolivia, Plurinational State of</option>
+            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+            <option value="BA">Bosnia and Herzegovina</option>
+            <option value="BW">Botswana</option>
+            <option value="BV">Bouvet Island</option>
+            <option value="BR">Brazil</option>
+            <option value="IO">British Indian Ocean Territory</option>
+            <option value="BN">Brunei Darussalam</option>
+            <option value="BG">Bulgaria</option>
+            <option value="BF">Burkina Faso</option>
+            <option value="BI">Burundi</option>
+            <option value="KH">Cambodia</option>
+            <option value="CM">Cameroon</option>
+            <option value="CA">Canada</option>
+            <option value="CV">Cape Verde</option>
+            <option value="KY">Cayman Islands</option>
+            <option value="CF">Central African Republic</option>
+            <option value="TD">Chad</option>
+            <option value="CL">Chile</option>
+            <option value="CN">China</option>
+            <option value="CX">Christmas Island</option>
+            <option value="CC">Cocos (Keeling) Islands</option>
+            <option value="CO">Colombia</option>
+            <option value="KM">Comoros</option>
+            <option value="CG">Congo</option>
+            <option value="CD">Congo, the Democratic Republic of the</option>
+            <option value="CK">Cook Islands</option>
+            <option value="CR">Costa Rica</option>
+            <option value="CI">Côte d'Ivoire</option>
+            <option value="HR">Croatia</option>
+            <option value="CU">Cuba</option>
+            <option value="CW">Curaçao</option>
+            <option value="CY">Cyprus</option>
+            <option value="CZ">Czech Republic</option>
+            <option value="DK">Denmark</option>
+            <option value="DJ">Djibouti</option>
+            <option value="DM">Dominica</option>
+            <option value="DO">Dominican Republic</option>
+            <option value="EC">Ecuador</option>
+            <option value="EG">Egypt</option>
+            <option value="SV">El Salvador</option>
+            <option value="GQ">Equatorial Guinea</option>
+            <option value="ER">Eritrea</option>
+            <option value="EE">Estonia</option>
+            <option value="ET">Ethiopia</option>
+            <option value="FK">Falkland Islands (Malvinas)</option>
+            <option value="FO">Faroe Islands</option>
+            <option value="FJ">Fiji</option>
+            <option value="FI">Finland</option>
+            <option value="FR">France</option>
+            <option value="GF">French Guiana</option>
+            <option value="PF">French Polynesia</option>
+            <option value="TF">French Southern Territories</option>
+            <option value="GA">Gabon</option>
+            <option value="GM">Gambia</option>
+            <option value="GE">Georgia</option>
+            <option value="DE">Germany</option>
+            <option value="GH">Ghana</option>
+            <option value="GI">Gibraltar</option>
+            <option value="GR">Greece</option>
+            <option value="GL">Greenland</option>
+            <option value="GD">Grenada</option>
+            <option value="GP">Guadeloupe</option>
+            <option value="GU">Guam</option>
+            <option value="GT">Guatemala</option>
+            <option value="GG">Guernsey</option>
+            <option value="GN">Guinea</option>
+            <option value="GW">Guinea-Bissau</option>
+            <option value="GY">Guyana</option>
+            <option value="HT">Haiti</option>
+            <option value="HM">Heard Island and McDonald Islands</option>
+            <option value="VA">Holy See (Vatican City State)</option>
+            <option value="HN">Honduras</option>
+            <option value="HK">Hong Kong</option>
+            <option value="HU">Hungary</option>
+            <option value="IS">Iceland</option>
+            <option value="IN">India</option>
+            <option value="ID">Indonesia</option>
+            <option value="IR">Iran, Islamic Republic of</option>
+            <option value="IQ">Iraq</option>
+            <option value="IE">Ireland</option>
+            <option value="IM">Isle of Man</option>
+            <option value="IL">Israel</option>
+            <option value="IT">Italy</option>
+            <option value="JM">Jamaica</option>
+            <option value="JP">Japan</option>
+            <option value="JE">Jersey</option>
+            <option value="JO">Jordan</option>
+            <option value="KZ">Kazakhstan</option>
+            <option value="KE">Kenya</option>
+            <option value="KI">Kiribati</option>
+            <option value="KP">Korea, Democratic People's Republic of</option>
+            <option value="KR">Korea, Republic of</option>
+            <option value="KW">Kuwait</option>
+            <option value="KG">Kyrgyzstan</option>
+            <option value="LA">Lao People's Democratic Republic</option>
+            <option value="LV">Latvia</option>
+            <option value="LB">Lebanon</option>
+            <option value="LS">Lesotho</option>
+            <option value="LR">Liberia</option>
+            <option value="LY">Libya</option>
+            <option value="LI">Liechtenstein</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MO">Macao</option>
+            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+            <option value="MG">Madagascar</option>
+            <option value="MW">Malawi</option>
+            <option value="MY">Malaysia</option>
+            <option value="MV">Maldives</option>
+            <option value="ML">Mali</option>
+            <option value="MT">Malta</option>
+            <option value="MH">Marshall Islands</option>
+            <option value="MQ">Martinique</option>
+            <option value="MR">Mauritania</option>
+            <option value="MU">Mauritius</option>
+            <option value="YT">Mayotte</option>
+            <option value="MX">Mexico</option>
+            <option value="FM">Micronesia, Federated States of</option>
+            <option value="MD">Moldova, Republic of</option>
+            <option value="MC">Monaco</option>
+            <option value="MN">Mongolia</option>
+            <option value="ME">Montenegro</option>
+            <option value="MS">Montserrat</option>
+            <option value="MA">Morocco</option>
+            <option value="MZ">Mozambique</option>
+            <option value="MM">Myanmar</option>
+            <option value="NA">Namibia</option>
+            <option value="NR">Nauru</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Netherlands</option>
+            <option value="NC">New Caledonia</option>
+            <option value="NZ">New Zealand</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Niger</option>
+            <option value="NG">Nigeria</option>
+            <option value="NU">Niue</option>
+            <option value="NF">Norfolk Island</option>
+            <option value="MP">Northern Mariana Islands</option>
+            <option value="NO">Norway</option>
+            <option value="OM">Oman</option>
+            <option value="PK">Pakistan</option>
+            <option value="PW">Palau</option>
+            <option value="PS">Palestinian Territory, Occupied</option>
+            <option value="PA">Panama</option>
+            <option value="PG">Papua New Guinea</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Peru</option>
+            <option value="PH">Philippines</option>
+            <option value="PN">Pitcairn</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="QA">Qatar</option>
+            <option value="RE">Réunion</option>
+            <option value="RO">Romania</option>
+            <option value="RU">Russian Federation</option>
+            <option value="RW">Rwanda</option>
+            <option value="BL">Saint Barthélemy</option>
+            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+            <option value="KN">Saint Kitts and Nevis</option>
+            <option value="LC">Saint Lucia</option>
+            <option value="MF">Saint Martin (French part)</option>
+            <option value="PM">Saint Pierre and Miquelon</option>
+            <option value="VC">Saint Vincent and the Grenadines</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">Sao Tome and Principe</option>
+            <option value="SA">Saudi Arabia</option>
+            <option value="SN">Senegal</option>
+            <option value="RS">Serbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leone</option>
+            <option value="SG">Singapore</option>
+            <option value="SX">Sint Maarten (Dutch part)</option>
+            <option value="SK">Slovakia</option>
+            <option value="SI">Slovenia</option>
+            <option value="SB">Solomon Islands</option>
+            <option value="SO">Somalia</option>
+            <option value="ZA">South Africa</option>
+            <option value="GS">South Georgia and the South Sandwich Islands</option>
+            <option value="SS">South Sudan</option>
+            <option value="ES">Spain</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="SD">Sudan</option>
+            <option value="SR">Suriname</option>
+            <option value="SJ">Svalbard and Jan Mayen</option>
+            <option value="SZ">Swaziland</option>
+            <option value="SE">Sweden</option>
+            <option value="CH">Switzerland</option>
+            <option value="SY">Syrian Arab Republic</option>
+            <option value="TW">Taiwan, Province of China</option>
+            <option value="TJ">Tajikistan</option>
+            <option value="TZ">Tanzania, United Republic of</option>
+            <option value="TH">Thailand</option>
+            <option value="TL">Timor-Leste</option>
+            <option value="TG">Togo</option>
+            <option value="TK">Tokelau</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinidad and Tobago</option>
+            <option value="TN">Tunisia</option>
+            <option value="TR">Turkey</option>
+            <option value="TM">Turkmenistan</option>
+            <option value="TC">Turks and Caicos Islands</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ukraine</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="UM">United States Minor Outlying Islands</option>
+            <option value="UY">Uruguay</option>
+            <option value="UZ">Uzbekistan</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VE">Venezuela, Bolivarian Republic of</option>
+            <option value="VN">Viet Nam</option>
+            <option value="VG">Virgin Islands, British</option>
+            <option value="VI">Virgin Islands, U.S.</option>
+            <option value="WF">Wallis and Futuna</option>
+            <option value="EH">Western Sahara</option>
+            <option value="YE">Yemen</option>
+            <option value="ZM">Zambia</option>
+            <option value="ZW">Zimbabwe</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <h3>Emergency Contact</h3>
+      <!-- emergency contact name -->
+      <div class="form-group row">
+        <label for="emergname" class="col-sm-2 form-control-label">Emergency Contact Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="emergname" id="emergname" placeholder="First Name, Last Name" ng-model="emergname"required autocomplete>
+          <p class="validation-error" ng-if="signup.emergname.$dirty && signup.emergname.$error.required">Emergency Name required</p>
+        </div>
+      </div>
+
+      <!-- emergency contact phone number -->
+      <div class="form-group row">
+        <label for="emergphone" class="col-sm-2 form-control-label">Emergency Contact Phone: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="emergphone" id="emergphone" placeholder="xxx-xxx-xxxx" ng-model="emergphone" required pattern='^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$' autocomplete>
+          <p class="validation-error" ng-if="signup.emergphone.$dirty && signup.emergphone.$error.required">Emergency Phone required</p>
+        </div>
+      </div>
+      <hr>
+      <h3>Misc.</h3>
+
+      <!-- shirt size -->
+      <div class="form-group row">
+        <label for="shirt" class="col-sm-2 form-control-label">Shirt Size</label>
+        <div class="col-sm-10">
+          <select class="form-control" name="shirtsize" id="shirt">
+            <option value="">Select a Shirt Size</option>
+            <option value="SM">Small</option>
+            <option value="MED">Medium</option>
+            <option value="LRG">Large</option>
+            <option value="XL">Extra Large</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="runnerGroup" class="col-sm-2 form-control-label">Runner category</label>
+        <div class="col-sm-10">
+          <select class="form-control" name="runnerGroup" id="runnerGroup" required>
+            <option value="">Select a Runner Category</option>
+            <option value="experienced">Experienced Runner</option>
+            <option value="beginner">Beginner Runner / Walker</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" required>By checking this checkbox, you are confirming that you are at least 18 years or older, and are accepting the Waiver and Release of Liability detailed below.
+        </label>
+      </div>
+      <div style="overflow:scroll; height: 200px;" class="container">
+        <h4>Waiver and Release of Liability</h4>
+        <p>In consideration of the risk of injury while participating in Run for a Cure (the "Activity"), and as consideration for the right to participate in the Activity, I hereby, for myself, my heirs, executors, administrators, assigns, or personal representatives, knowingly and voluntarily enter into this waiver and release of liability and hereby waive any and all rights, claims or causes of action of any kind whatsoever arising out of my participation in the Activity, and do hereby release and forever discharge AKPsi - Relay for Life, located at University Of Washington, Seattle, Washington 98195, their affiliates, managers, members, agents, attorneys, staff, volunteers, heirs, representatives, predecessors, successors and assigns, for any physical or psychological injury, including but not limited to illness, paralysis, death, damages, economical or emotional loss, that I may suffer as a direct result of my participation in the aforementioned Activity, including traveling to and from an event related to this Activity. <br><br>I am voluntarily participating in the aforementioned Activity and I am participating in the Activity entirely at my own risk. I am aware of the risks associated with traveling to and from as well as participating in this Activity, which may include, but are not limited to, physical or psychological injury, pain, suffering, illness, disfigurement, temporary or permanent disability (including paralysis), economic or emotional loss, and death. I understand that these injuries or outcomes may arise from my own or others' negligence, conditions related to travel, or the condition of the Activity location(s). Nonetheless, I assume all related risks, both known or unknown to me, of my participation in this Activity, including travel to, from and during this Activity. <br><br>I agree to indemnify and hold harmless AKPsi - Relay for Life against any and all claims, suits or actions of any kind whatsoever for liability, damages, compensation or otherwise brought by me or anyone on my behalf, including attorney's fees and any related costs, if litigation arises pursuant to any claims made by me or by anyone else acting on my behalf. If AKPsi - Relay for Life incurs any of these types of expenses, I agree to reimburse AKPsi - Relay for Life. <br><br>I acknowledge that AKPsi - Relay for Life and their directors, officers, volunteers, representatives and agents are not responsible for errors, omissions, acts or failures to act of any party or entity conducting a specific event or activity on behalf of AKPsi - Relay for Life. <br><br>I acknowledge that this Activity may involve a test of a person's physical and mental limits and may carry with it the potential for death, serious injury, and property loss. The risks may include, but are not limited to, those caused by terrain, facilities, temperature, weather, lack of hydration, condition of participants, equipment, vehicular traffic and actions of others, including but not limited to, participants, volunteers, spectators, coaches, event officials and event monitors, and/or producers of the event. <br><br>I acknowledge that I have carefully read this "waiver and release" and fully understand that it is a release of liability. I expressly agree to release and discharge AKPsi - Relay for Life and all of its affiliates, managers, members, agents, attorneys, staff, volunteers, heirs, representatives, predecessors, successors and assigns, from any and all claims or causes of action and I agree to voluntarily give up or waive any right that I otherwise have to bring a legal action against AKPsi - Relay for Life for personal injury or property damage. <br><br>To the extent that statute or case law does not prohibit releases for negligence, this release is also for negligence on the part of AKPsi - Relay for Life, its agents, and employees. <br><br>In the event that I should require medical care or treatment, I agree to be financially responsible for any costs incurred as a result of such treatment. I am aware and understand that I should carry my own health insurance. <br><br> In the event that any damage to equipment or facilities occurs as a result of my or my family's willful actions, neglect or recklessness, I acknowledge and agree to be held liable for any and all costs associated with any actions of neglect or recklessness. <br><br> This Agreement was entered into at arm's-length, without duress or coercion, and is to be interpreted as an agreement between two parties of equal bargaining strength. Both the Participant and AKPsi - Relay for Life agree that this Agreement is clear and unambiguous as to its terms, and that no other evidence will be used or admitted to alter or explain the terms of this Agreement, but that it will be interpreted based on the language in accordance with the purposes for which it is entered into. <br><br> In the event that any provision contained within this Release of Liability shall be deemed to be severable or invalid, or if any term, condition, phrase or portion of this agreement shall be determined to be unlawful or otherwise unenforceable, the remainder of this agreement shall remain in full force and effect, so long as the clause severed does not affect the intent of the parties. If a court should find that any provision of this agreement to be invalid or unenforceable, but that by limiting said provision it would become valid and enforceable, then said provision shall be deemed to be written, construed and enforced as so limited. <br><br> In the event of an emergency, please contact the person(s) inputted in the form above.
+      </p>
+      </div>
+      <br><br>
+      <div class="form-group">
+          <button type="submit" id="submitbtn" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+  </div>
+  </main>
+
+
+  <br>
+<footer>
+    <div class="container-fluid">
+        <ul>
+            <li><a href="mailto:rhochapterphilanthropy@outlook.com">Contact Us</a></li>
+            <li><a href="privacy/privacy-statement.html">Privacy Statement</a></li>
+            <li><a href="privacy/terms-conditions.html">Terms & Conditions</a></li>
+            <li>&copy; 2017</li>
+        </ul>
+    </div>
+</footer>
+</body>
+  <script src="js/navigate.js"></script>
+
+
+</html>
