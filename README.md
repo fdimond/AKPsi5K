@@ -12,4 +12,4 @@ Although my skill in HTML, CSS and Javascript were strong; this would be my firs
 <br>
 </p>
 
-*Gitsite: https://fdimond.github.io/AKPsi5K/*
+*Github page: https://fdimond.github.io/AKPsi5K/*
